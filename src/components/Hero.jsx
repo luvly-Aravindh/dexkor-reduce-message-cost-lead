@@ -46,12 +46,12 @@ export default function Hero() {
 
             <h1 className="mb-5 mt-5 text-[clamp(33px,7vw,65px)] font-black leading-[1.05] tracking-[-1px] text-white sm:mb-[22px] sm:leading-[1.02] sm:tracking-[-1.5px] lg:tracking-[-2.5px]">
               Your customers are already on WhatsApp.{" "}
-              <em className="relative not-italic text-[color:var(--accent,#25d366)] after:absolute after:inset-x-0 after:-bottom-0.5 after:h-1.5 after:rounded after:bg-[var(--accent,#25d366)] after:opacity-25 after:content-['']">
+              <em className="relative not-italic text-[#25d366] after:absolute after:inset-x-0 after:-bottom-0.5 after:h-1.5 after:rounded after:bg-[#25d366] after:opacity-25 after:content-['']">
                 Manage the whole conversation there.
               </em>
             </h1>
 
-            <p className="mb-7 max-w-[620px] text-[17px] leading-[1.55] text-[color:var(--muted,#97a6c7)] sm:mb-[26px] sm:text-[19px]">
+            <p className="mb-7 max-w-[620px] text-[17px] leading-[1.55] text-[#97a6c7] sm:mb-[26px] sm:text-[19px]">
               DexKor is the only CRM + Support platform built around WhatsApp, so sales and support teams can handle
               customer conversations, follow-ups and service from one place.
             </p>
@@ -70,7 +70,7 @@ export default function Hero() {
             {/* CTA */}
             <div className="mt-2 flex w-full flex-col items-center gap-4 lg:items-start">
               <CTAButton>Show Me How DexKor Works</CTAButton>
-              <div className="flex flex-wrap justify-center gap-x-4 gap-y-1.5 text-[13px] text-[color:var(--muted,#97a6c7)] lg:justify-start">
+              <div className="flex flex-wrap justify-center gap-x-4 gap-y-1.5 text-[13px] text-[#97a6c7] lg:justify-start">
                 {CTA_SUB.map((t) => (
                   <span key={t} className="inline-flex items-center gap-1.5">
                     <Check className="h-3.5 w-3.5" /> {t}
@@ -80,16 +80,16 @@ export default function Hero() {
             </div>
 
             {/* trust strip */}
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-x-5 gap-y-3 border-t border-[color:var(--line,rgba(255,255,255,.1))] pt-5 text-[13px] text-[color:var(--muted,#97a6c7)] sm:mt-9 sm:py-4 lg:justify-start">
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-x-5 gap-y-3 border-t border-[color:var(--line,rgba(255,255,255,.1))] pt-5 text-[13px] text-[#97a6c7] sm:mt-9 sm:py-4 lg:justify-start">
               <div className="flex gap-0.5 text-[color:var(--gold,#ffb020)]">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star key={i} className="h-4 w-4" />
                 ))}
               </div>
               <div><b className="text-white">4.8/5</b> from 320+ reviews</div>
-              <div className="hidden h-7 w-px bg-[color:var(--line,rgba(255,255,255,.1))] sm:block" />
+              <div className="hidden h-7 w-px bg-[rgba(255,255,255,.1)] sm:block" />
               <div><b className="text-white">500+</b> teams onboard</div>
-              <div className="hidden h-7 w-px bg-[color:var(--line,rgba(255,255,255,.1))] sm:block" />
+              <div className="hidden h-7 w-px bg-[rgba(255,255,255,.1)] sm:block" />
               <div><b className="text-white">1M+</b> monthly conversations</div>
             </div>
           </div>
