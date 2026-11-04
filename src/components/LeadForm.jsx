@@ -12,6 +12,19 @@ import {
   submitLead,
   getTrackingFields,
 } from "../services/leadService.js";
+import { scrollToId } from "../lib/scroll.js";
+
+const CALENDLY_URL =
+  "https://calendly.com/richard-dexkor/richard-meeting?embed_domain=dexkor.com&embed_type=Inline&hide_gdpr_banner=1";
+
+/*
+ * Calendly pre-fills its booking form from the name and email query params.
+ */
+function buildCalendlyUrl({ name, email }) {
+  return `${CALENDLY_URL}&name=${encodeURIComponent(
+    name.trim()
+  )}&email=${encodeURIComponent(email.trim())}`;
+}
 
 const VOLUME_OPTIONS = [
   "50,000 to 75,000",
@@ -156,6 +169,15 @@ export default function LeadForm() {
   useEffect(() => {
     setTracking(getTrackingFields());
   }, []);
+
+  /*
+   * Bring Calendly into view once the form has been submitted
+   */
+  useEffect(() => {
+    if (status === "success") {
+      scrollToId("lead-form");
+    }
+  }, [status]);
 
   /*
    * Handle field changes
@@ -391,7 +413,7 @@ export default function LeadForm() {
 
             <div className="w-full overflow-hidden rounded-xl">
               <iframe
-                src="https://calendly.com/richard-dexkor/richard-meeting?embed_domain=dexkor.com&embed_type=Inline&hide_gdpr_banner=1"
+                src={buildCalendlyUrl(values)}
                 width="100%"
                 height="700"
                 frameBorder="0"
